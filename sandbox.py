@@ -43,5 +43,5 @@ def tradfri_dim_group(hubip, securityid, groupid, value):
     dim = float(value) * 2.55
     payload = '{ "5851" : %s }' % int(dim)
 
-    api = '{} -m put -u "Client_identity" -k "{}" -e \'{}\' "{}"'.format(coap, securityid,payload, tradfriHub)
+    api = '{} -m put -u "Client_identity" -k "{}" -e \'{}\' "{}"'.format('coap-client', securityid,payload, tradfriHub)
     result = os.popen(api)

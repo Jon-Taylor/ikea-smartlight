@@ -36,6 +36,11 @@ def allOn(groups):
     for group in groups:
         tradfri_dim_group(hubip, securityid, group, 100)
 
+def allToValue(groups,value):
+    for group in groups:
+        tradfri_dim_group(hubip, securityid, group, value)
+
+
 
 def tradfri_dim_group(hubip, securityid, groupid, value):
     """ function for dimming tradfri lightbulb """

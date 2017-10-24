@@ -26,3 +26,6 @@ groups = tradfriStatus.tradfri_get_groups(hubip, securityid)
 print(groups)
 
 print(devices)
+
+print(devices)
+

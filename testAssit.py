@@ -27,7 +27,7 @@ from google.assistant.library import Assistant
 from google.assistant.library.event import EventType
 from google.assistant.library.file_helpers import existing_file
 import sandbox as sb
-import pyLight as pylight
+import pilight as pilight
 
 local_commands=['blue', 'lounge', 'lights', 'off', 'on', 'downstairs','dim']
 def process_event(event,assistant):
@@ -41,7 +41,7 @@ def process_event(event,assistant):
         print(event.args['text'])
         if any(set(local_commands) & set(event.args['text'].lower().split())):
             assistant.stop_conversation()
-            pylight.ledOff()
+            pilight.ledOff()
             BrightnessValue = re.findall('\d+',event.args['text'])
             cmmd=list(set(local_commands) & set(event.args['text'].lower().split()))
             
@@ -88,7 +88,7 @@ def process_event(event,assistant):
 
 
     if event.type == EventType.ON_CONVERSATION_TURN_STARTED:
-        pylight.ledQuestionMark()
+        pilight.ledQuestionMark()
         print()
         
 
@@ -96,7 +96,7 @@ def process_event(event,assistant):
 
     if (event.type == EventType.ON_CONVERSATION_TURN_FINISHED and
             event.args and not event.args['with_follow_on_turn']):
-        pylight.ledOff()
+        pilight.ledOff()
         print()
 
 def main():

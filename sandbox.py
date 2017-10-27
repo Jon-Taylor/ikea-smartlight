@@ -29,6 +29,7 @@ print(devices)
 
 print(devices)
 lightgroup=[]
+downstairs=[150864,164492,166823,175915]
 for groupid in groups:
     lightgroup.append(tradfriStatus.tradfri_get_group(hubip, securityid,
                                                       str(groupid)))
@@ -36,10 +37,25 @@ def allOn(groups):
     for group in groups:
         tradfri_dim_group(hubip, securityid, group, 100)
 
+def downstairsLights(BrightnessValue):
+    for group in [150864,164492,166823,175915]:
+        tradfri_dim_group(hubip, securityid, group, BrightnessValue)
+
+def BlueLoungeLights(BrightnessValue):
+    tradfri_dim_group(hubip, securityid, 150864, BrightnessValue)
+
+def kitchenLights(BrightnessValue):
+    tradfri_dim_group(hubip, securityid, 175915, BrightnessValue)
+
+def BrownLoungeLights(BrightnessValue):
+    tradfri_dim_group(hubip, securityid, 164492, BrightnessValue)
+
+def DiningRoomLights(BrightnessValue):
+    tradfri_dim_group(hubip, securityid, 150864, BrightnessValue)
+
 def allToValue(groups,value):
     for group in groups:
         tradfri_dim_group(hubip, securityid, group, value)
-
 
 
 def tradfri_dim_group(hubip, securityid, groupid, value):

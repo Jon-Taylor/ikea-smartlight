@@ -30,7 +30,7 @@ import sandbox as sb
 import piLight as pilight
 import re
 
-local_commands=['blue', 'lounge', 'lights', 'off', 'on', 'downstairs','dim']
+local_commands=['blue', 'lounge', 'lights', 'off', 'on', 'downstairs', 'dim', 'kitchen', 'brown']
 def process_event(event,assistant):
     """Pretty prints events.
     Prints all events that occur with two spaces between each new

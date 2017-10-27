@@ -48,10 +48,13 @@ def process_event(event,assistant):
             
             if 'on' in cmmd or 'dim' in cmmd and 'downstairs' in cmmd:
                 if len(BrightnessValue) == 0:
+                    print('Turing downstairs lights on')
                     sb.downstairsLights(100)
                 else:
+                    print('Dimming downstairs lights on')
                     sb.downstairsLights(int(BrightnessValue[0]))
             if 'off' in cmmd and 'downstairs' in cmmd:
+                print('Turing downstairs lights off')
                 sb.downstairsLights(0)
 
             if 'on' in cmmd or 'dim' in cmmd and 'blue' in cmmd:
@@ -64,10 +67,13 @@ def process_event(event,assistant):
 
             if 'on' in cmmd or 'dim' in cmmd and 'kitchen' in cmmd:
                 if len(BrightnessValue) == 0:
+                    print('Turing kitchen lights on')
                     sb.kitchenLights(100)
                 else:
+                    print('Dimming downstairs lights on')
                     sb.kitchenLights(int(BrightnessValue[0]))
             if 'off' in cmmd and 'kitchen' in cmmd:
+                print('Turing downstairs lights off')
                 sb.kitchenLights(0)
 
             if 'on' in cmmd or 'dim' in cmmd and 'brown' in cmmd:

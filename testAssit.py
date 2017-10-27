@@ -27,7 +27,7 @@ from google.assistant.library import Assistant
 from google.assistant.library.event import EventType
 from google.assistant.library.file_helpers import existing_file
 import sandbox as sb
-import pilight as pilight
+import piLight as pilight
 
 local_commands=['blue', 'lounge', 'lights', 'off', 'on', 'downstairs','dim']
 def process_event(event,assistant):

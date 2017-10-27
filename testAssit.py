@@ -47,7 +47,7 @@ def process_event(event,assistant):
             cmmd=list(set(local_commands) & set(event.args['text'].lower().split()))
             
             if 'on' in cmmd or 'dim' in cmmd and 'downstairs' in cmmd:
-                if BrightnessValue == 0:
+                if len(BrightnessValue) == 0:
                     sb.downstairsLights(100)
                 else:
                     sb.downstairsLights(int(BrightnessValue[0]))
@@ -55,7 +55,7 @@ def process_event(event,assistant):
                 sb.downstairsLights(0)
 
             if 'on' in cmmd or 'dim' in cmmd and 'blue' in cmmd:
-                if BrightnessValue == 0:
+                if len(BrightnessValue) == 0:
                     sb.BlueLoungeLights(100)
                 else:
                     sb.BlueLoungeLights(int(BrightnessValue[0]))
@@ -63,7 +63,7 @@ def process_event(event,assistant):
                 sb.BlueLoungeLights(0)
 
             if 'on' in cmmd or 'dim' in cmmd and 'kitchen' in cmmd:
-                if BrightnessValue == 0:
+                if len(BrightnessValue) == 0:
                     sb.kitchenLights(100)
                 else:
                     sb.kitchenLights(int(BrightnessValue[0]))
@@ -71,7 +71,7 @@ def process_event(event,assistant):
                 sb.kitchenLights(0)
 
             if 'on' in cmmd or 'dim' in cmmd and 'brown' in cmmd:
-                if BrightnessValue == 0:
+                if len(BrightnessValue) == 0:
                     sb.BrownLoungeLights(100)
                 else:
                     sb.BrownLoungeLights(int(BrightnessValue[0]))
@@ -79,7 +79,7 @@ def process_event(event,assistant):
                 sb.BrownLoungeLights(0)
 
             if 'on' in cmmd or 'dim' in cmmd and 'dining' in cmmd:
-                if BrightnessValue == 0:
+                if len(BrightnessValue) == 0:
                     sb.DiningRoomLights(100)
                 else:
                     sb.DiningRoomLights(int(BrightnessValue[0]))
